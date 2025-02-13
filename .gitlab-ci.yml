@@ -1,0 +1,35 @@
+image: node:20.10.0                                     
+stages:             
+  - test
+  - deploy
+  
+# 构建成功再使用缓存加快构建
+# cache:
+#   paths:
+#     - node_modules/
+#     - .pnpm-store
+    
+test:                                                   
+  stage: test                                           
+  script:                                               
+  - npm config set registry https://registry.npmmirror.com
+  - npm install -g pnpm@latest
+  - pnpm install
+  - pnpm run build
+  - mv ./build ./public
+  rules:
+    - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH     
+pages:                                                  
+  stage: deploy                                          
+  script:                                               
+  - npm config set registry https://registry.npmmirror.com
+  - npm install -g pnpm@latest                            
+  - pnpm install                                          
+  - pnpm run build                                        
+  - find ./build -type f -size +2M -delete                
+  - mv ./build ./public 
+  artifacts:                                             
+    paths:                                               
+    - public                                             
+  rules:                                                 
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH      
