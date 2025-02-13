@@ -1,92 +1,122 @@
-# website
+# byconity.github.io
 
+## Developing
 
+This website is powered by [Docusarus](https://docusaurus.io/). We are using version 2.x at the moment.
+You are encouraged to understand the basics of Docusaurus first.
 
-## Getting started
+Before run the below script, please [install pnpm](https://pnpm.io/installation) first.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+```bash
+pnpm install # Install NPM dependencies
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+pnpm start # Start local server, OR
 
-## Add your files
+pnpm start -l zh-cn # Start the zh-cn server
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin http://10.200.93.25/zhejianglab-onecloud/website.git
-git branch -M master
-git push -uf origin master
+pnpm run build # Build the Website
 ```
 
-## Integrate with your tools
+## General Folder Structure
 
-- [ ] [Set up project integrations](http://10.200.93.25/zhejianglab-onecloud/website/-/settings/integrations)
+```txt
+byconity.github.io/
+├── community/ # English pages for the community/* routes
+│   ├── category-1
+│   │   ├── assets/ # Images used in category-1
+│   │   ├── _category_.json # Metadata for category-1
+│   │   └──doc-1.md
+│   ├── become-maintainer.mdx
+│   └── community-code-of-conduct.mdx
+│
+├── docs/ # Latest English docs, use kebab-case
+│   ├── category-1
+│   │   ├── assets/ # Images used in category-1
+│   │   ├── _category_.json # Metadata for category-1
+│   │   └──doc-1.md
+│   ├── doc-2.md
+│   └── doc-3.md
+│
+├── versioned_docs/
+│   └── version-0.2.0 # Version 0.2.0 English docs, use kebab-case
+│       ├── category-1
+│       │   ├── assets/ # Images used in category-1
+│       │   ├── _category_.json # Metadata for category-1
+│       │   └──doc-1.md
+│       ├── doc-2.md
+│       └── doc-3.md
+│
+├── versioned_sidebars/
+│   └── version-0.2.0-sidebars.json # Version 0.2.0 English sidebar
+│
+├── blog/ # English blogs, use kebab-case
+│   ├── 2021-01-01-happy-new-year.md
+│   └── 2021-02-14-valentines-day.md
+│
+├── i18n/
+│   └── zh-CN/
+│       ├── docusaurus-plugin-content-docs/
+│       │   ├── current/ # Latest Chinese docs, use kebab-case
+│       │   │   ├── category-1
+│       │   │   │   ├── assets/ # Images used in category-1
+│       │   │   │   ├── _category_.json # Metadata for category-1
+│       │   │   │   └──doc-1.md
+│       │   │   ├── doc-2.md
+│       │   │   └── doc-3.md
+│       │   ├── current.json # Latest Chinese sidebar
+│       │   │
+│       │   ├── version-0.2.0/ # Version 0.2.0 Chinese docs, use kebab-case
+│       │   │   ├── category-1
+│       │   │   │   ├── assets/ # Images used in category-1
+│       │   │   │   ├── _category_.json # Metadata for category-1
+│       │   │   │   └──doc-1.md
+│       │   │   ├── doc-2.md
+│       │   │   └── doc-3.md
+│       │   └── version-0.2.0.json # Version 0.2.0 Chinese sidebar
+│       │
+│       ├── docusaurus-plugin-content-docs-community/ # Chinese commuity pages, use kebab-case
+│       │   ├── become-maintainer.mdx
+│       │   └── community-code-of-conduct.mdx
+│       │
+│       └── docusaurus-plugin-content-blog/
+│           └── current/ # Chinese blogs, use kebab-case
+│               ├── 2021-01-01-happy-new-year.md
+│               └── 2021-02-14-valentines-day.md
+│
+├── src/ # Website source code
+└── static/
+    └── img/
+        └── dbyconity-social-card # Opengraph Social Card
+```
 
-## Collaborate with your team
+## For Writers
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+### Docs
 
-## Test and Deploy
+#### File Location
 
-Use the built-in continuous integration in GitLab.
+| Version | Language |                                                          Path                                                          |
+| :-----: | :------: | :--------------------------------------------------------------------------------------------------------------------: |
+| Latest  |    en    |                                                    [docs/](./docs/)                                                    |
+| Latest  |  zh-cn   |       [i18n/zh-cn/docusaurus-plugin-content-docs/current/](./i18n/zh-cn/docusaurus-plugin-content-docs/current/)       |
+|  0.2.0  |    en    |                            [versioned_docs/version-0.2.0/](./versioned_docs/version-0.2.0/)                            |
+|  0.2.0  |  zh-cn   | [i18n/zh-cn/docusaurus-plugin-content-docs/version-0.2.0/](./i18n/zh-cn/docusaurus-plugin-content-docs/version-0.2.0/) |
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+#### Editing Docs
 
-***
+- Learn the basics at https://docusaurus.io/docs/2.x/create-doc.
+- Docs front matters at https://docusaurus.io/docs/2.x/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter.
 
-# Editing this README
+### Blog Posts
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+#### File Location
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+| Language |                                                    Path                                                    |
+| :------: | :--------------------------------------------------------------------------------------------------------: |
+|    en    |                                              [blog/](./blog/)                                              |
+|  zh-cn   | [i18n/zh-cn/docusaurus-plugin-content-blog/current/](./i18n/zh-cn/docusaurus-plugin-content-blog/current/) |
 
-## Name
-Choose a self-explaining name for your project.
+#### Editing Blog Posts
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+- Learn the basics at https://docusaurus.io/docs/blog.
+- Blog front matters at https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog#markdown-front-matter
