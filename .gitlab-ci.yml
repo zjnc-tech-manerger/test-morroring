@@ -12,7 +12,7 @@ cache:
 test:                                                   
   stage: test                                           
   script:                                               
-  - npm config set registry https://registry.npmmirror.com # 可能会被覆盖最好在配置文件中修改
+#  - npm config set registry https://registry.npmmirror.com # 可能会被覆盖最好在配置文件中修改
   - npm install -g pnpm@latest
   - pnpm install
   - pnpm run build
