@@ -69,7 +69,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/ByConity/byconity.github.io/tree/main',
+          editUrl: 'http://tq-gitlab.zhejianglab.com/zhejianglab-onecloud/website/-/tree/master',
           editLocalizedFiles: true,
           lastVersion: 'current',
         },
