@@ -37,7 +37,7 @@ const config = {
         path: 'community',
         routeBasePath: 'community',
         sidebarPath: require.resolve('./sidebarsCommunity.js'),
-        editUrl: 'https://github.com/ByConity/byconity.github.io/tree/main',
+        editUrl: 'http://tq-gitlab.zhejianglab.com/zhejianglab-onecloud/website/-/tree/main',
         editLocalizedFiles: true,
       }),
     ],
