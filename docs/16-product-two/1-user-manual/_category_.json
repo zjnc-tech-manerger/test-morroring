@@ -1,6 +1,6 @@
 {
-  "label": "User Manual", // 分类显示的名字
-  "position": 1, // 在父分类下的显示顺序
-  "collapsible": true, // 是否可折叠，默认是false。如果设置为true，可以让该分类在侧边栏中默认折叠起来。
-  "collapsed": false // 当 collapsible 为 true 时，此选项决定分类是否默认折叠。
+  "label": "User Manual",
+  "position": 1, 
+  "collapsible": true,
+  "collapsed": false
 }
