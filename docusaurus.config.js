@@ -16,13 +16,6 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/website/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'byconity', // Usually your GitHub org/user name.
-  projectName: 'byconity.github.io', // Usually your repo name.
-  deploymentBranch: 'gh-pages',
-  trailingSlash: false,
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
