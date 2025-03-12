@@ -5,7 +5,7 @@
   "collapsed": false,
   "link": {
     "type": "generated-index",
-    "title": "Subcategory One Overview", // 自定义生成索引页面的标题
-    "description": "This is the overview page for Subcategory One." // 自定义描述
+    "title": "Subcategory One Overview",
+    "description": "This is the overview page for Subcategory One." 
   }
 }
