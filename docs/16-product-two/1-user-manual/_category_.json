@@ -1,9 +1,6 @@
 {
   "label": "User Manual", // 分类显示的名字
   "position": 1, // 在父分类下的显示顺序
-  "link": {
-    "type": "generated-index" // 如果你希望自动生成一个索引页面，则使用这个选项。也可以是具体的链接。
-  },
   "collapsible": true, // 是否可折叠，默认是false。如果设置为true，可以让该分类在侧边栏中默认折叠起来。
   "collapsed": false // 当 collapsible 为 true 时，此选项决定分类是否默认折叠。
 }
