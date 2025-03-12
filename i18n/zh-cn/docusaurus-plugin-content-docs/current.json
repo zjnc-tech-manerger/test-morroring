@@ -75,4 +75,8 @@
     "message": "版本发布",
     "description": "The label for category Release Note in sidebar tutorialSidebar"
   }
+  "sidebar.tutorialSidebar.category.Product One": {
+    "message": "产品一",
+    "description": "The label for category Release Note in sidebar tutorialSidebar"
+  }
 }
