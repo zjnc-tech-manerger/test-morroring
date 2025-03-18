@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: '之江一朵云',
-  tagline: '之江一朵云',
+  tagline: '之江',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
