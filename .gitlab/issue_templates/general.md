@@ -22,5 +22,5 @@
 /label ~"Triage" ~"Priority::Medium" 
 ### 指定用户 
 /assign @developer  
-### 关联指定的里程碑（一次只能关联一个）
+### 关联现有里程碑（一次只能关联一个）
 /milestone %"2024-08 Release"
