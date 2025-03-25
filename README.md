@@ -1,4 +1,3 @@
-test
 # byconity.github.io
 
 ## Developing
