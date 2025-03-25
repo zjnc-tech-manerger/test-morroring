@@ -18,5 +18,9 @@
 ### 附加信息  
 <!-- 日志、截图、相关 Issue 链接等 -->  
 
-/label ~"Triage" ~"Priority::Medium"  
+### 添加标签
+/label ~"Triage" ~"Priority::Medium" 
+### 指定用户 
 /assign @developer  
+### 关联指定的里程碑（一次只能关联一个）
+/milestone %"2024-08 Release"
