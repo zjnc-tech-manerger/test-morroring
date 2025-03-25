@@ -19,9 +19,9 @@
 - [ ] RCA 文档  
 - [ ] 预防措施（如监控增强、代码修复）  
 
-### 添加标签
+<!-- 添加已有标签 -->
 /label ~"Incident" ~"Priority::Critical"  
-### 指定用户
+<!-- 指定用户 -->
 /mention @sre-team @management  
-### 关联现有里程碑（一次只能关联一个）
+<!-- 关联现有里程碑（一次只能关联一个） -->
 /milestone %"2024-08 Release"
