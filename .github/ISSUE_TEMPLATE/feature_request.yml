@@ -19,7 +19,7 @@ body:
       description: "用简洁的语言说明该功能的用途和价值"
       placeholder: |
         例如：增加深色模式支持，减少夜间使用时的眼睛疲劳
-        可附上需求文档链接
+              可附上需求文档链接
     validations:
       required: true
 
@@ -49,30 +49,11 @@ body:
     attributes:
       label: "实现方案建议"
       description: "可选，如果你有技术实现思路请说明"
-      placeholder: "可通过 prefers-color-scheme CSS 媒体查询实现..."
+      placeholder: |
+        可通过 prefers-color-scheme CSS 媒体查询实现...
+        可附上技术设计文档链接
 
-  - type: checkboxes
-    id: dependencies
-    attributes:
-      label: "依赖项"
-      options:
-        - label: "需要第三方服务（需说明）"
-        - label: "需要设计资源"
-        - label: "需要后端API修改"
-
-  # 4. 条件字段（通过 issue-form-conditions 实现）
-  - type: textarea
-    id: thirdparty_details
-    attributes:
-      label: "第三方服务详情"
-      description: "请说明需要集成的第三方服务"
-      placeholder: "例如：需要接入支付宝刷脸认证"
-    validations:
-      required: false
-    # 条件显示（需 GitHub 支持）
-    # 注意：原生的 conditional 属性已移除，改用描述提示
-
-  # 5. 可视化参考
+  # 4. 可视化参考
   - type: markdown
     attributes:
       value: "## 🎨 设计参考"
@@ -80,7 +61,7 @@ body:
   - type: input
     id: design_reference
     attributes:
-      label: "设计稿链接"
+      label: "产品设计文档链接"
       placeholder: "https://figma.com/file/..."
 
   # 6. 确认声明
@@ -95,5 +76,4 @@ body:
       options:
         - label: "我已搜索现有 Issue 确认无重复"
         - label: "该功能需求已获得团队初步认可"
-        - label: "我愿意协助提供更多细节"
 ---
