@@ -42,7 +42,7 @@ body:
     attributes:
       label: "重现步骤"
       description: "请向我们提供可重现的步骤，以便更容易找到根本原因"
-      placeholder: "例如：1.helm安装
-                          2. ..."
+      placeholder: "例如：1.helm安装"
+                   "      2. ..."
     validations:
       required: true
