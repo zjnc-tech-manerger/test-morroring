@@ -1,9 +1,9 @@
 ---
-name: general         # 模板显示名称（用户可见）
-about: 通用模板       # 模板描述（用户可见）
-title: ""             # 自动生成 Issue 标题前缀
-labels: ""            # 自动打标签（可多个，如 ["bug", "high-priority"]）
-assignees: ""         # 自动分配负责人（如 "@user1, @user2"）
+name: general                                 # 模板显示名称（用户可见）
+about: 通用模板                               # 模板描述（用户可见）
+title: "[类型][模块] 动作 + 对象 + 上下文"   # 自动生成 Issue 标题前缀
+labels: ""                                    # 自动打标签（可多个，如 ["bug", "high-priority"]）
+assignees: ""                                 # 自动分配负责人（如 "@user1, @user2"）
 ---
 
 ## 问题类型 [bug/feature/docs]  
