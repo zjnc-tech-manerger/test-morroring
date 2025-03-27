@@ -1,11 +1,3 @@
----
-name: 'general'
-about: 通用模板
-title: '[类型] 简短描述 (关联ID)'
-labels: 'enhancement'
-assignees: ''
----
-
 <!-- [MR标题规范：类型] 简短描述 (关联ID) -->
 <!-- 示例：[Feature] 用户登录支持OTP验证 (PROJ-123) -->
 
