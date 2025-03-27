@@ -1,5 +1,5 @@
 ---
-name: "🐞 Bug Report"
+name: "Bug Report"
 description: "提交详细的错误报告"
 title: "[BUG] "
 labels: ["bug", "needs-triage"]
