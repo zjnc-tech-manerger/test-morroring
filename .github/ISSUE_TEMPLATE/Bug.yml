@@ -1,0 +1,137 @@
+---
+name: "🐞 Bug Report"
+description: "提交详细的错误报告"
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+assignees:
+  - "your-team-lead"  # 自动分配负责人
+
+# --- 表单主体 ---
+body:
+  # 1. 分类部分
+  - type: markdown
+    attributes:
+      value: "## ❗ 问题分类"
+
+  - type: dropdown
+    id: bug_category
+    attributes:
+      label: "问题类型"
+      description: "选择最接近的分类"
+      options:
+        - "UI 界面问题"
+        - "API 接口错误"
+        - "性能问题"
+        - "安全漏洞"
+        - "其他（需说明）"
+    validations:
+      required: true
+
+  # 2. 动态显示字段（仅当选择"其他"时显示）
+  - type: textarea
+    id: custom_category
+    attributes:
+      label: "请具体描述问题类型"
+      placeholder: "例如：数据库连接池泄漏..."
+      conditional: "bug_category == '其他（需说明）'"
+    validations:
+      required: true
+
+  # 3. 核心描述
+  - type: markdown
+    attributes:
+      value: "## 📝 问题详情"
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "重现步骤"
+      description: "详细描述如何复现该问题"
+      placeholder: |
+        1. 打开页面 /dashboard
+        2. 点击搜索按钮
+        3. 输入超过 100 个字符
+        4. 观察控制台错误
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "预期行为"
+      placeholder: "应该正常显示搜索结果..."
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: "实际行为"
+      placeholder: "页面卡死并显示 'Internal Server Error'"
+
+  # 4. 环境信息
+  - type: markdown
+    attributes:
+      value: "## 🌍 环境信息"
+
+  - type: input
+    id: os
+    attributes:
+      label: "操作系统"
+      placeholder: "Windows 11 / macOS Sonoma / Ubuntu 22.04"
+      value: "{{ os }}"  # 自动填充系统变量
+
+  - type: input
+    id: browser
+    attributes:
+      label: "浏览器及版本"
+      placeholder: "Chrome 120 / Safari 17"
+
+  - type: input
+    id: app_version
+    attributes:
+      label: "软件版本"
+      description: "在设置中查看的版本号"
+      placeholder: "v2.3.1"
+    validations:
+      required: true
+      regex: ^v?\d+\.\d+\.\d+(-[a-z0-9]+)?$  # 版本号格式校验
+
+  # 5. 辅助材料
+  - type: markdown
+    attributes:
+      value: "## 📎 附加材料"
+
+  - type: checkboxes
+    id: attachments
+    attributes:
+      label: "请提供以下材料"
+      options:
+        - label: "截图"
+          required: false
+        - label: "日志文件（需脱敏）"
+          required: true
+        - label: "屏幕录制"
+          required: false
+
+  - type: input
+    id: screenshot_url
+    attributes:
+      label: "截图链接"
+      description: "上传至图床后粘贴链接"
+      placeholder: "https://imgur.com/..."
+      conditional: "attachments.includes('截图')"
+
+  # 6. 确认声明
+  - type: markdown
+    attributes:
+      value: "## ✅ 确认声明"
+
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: ""
+      options:
+        - label: "我已确认该问题未被重复报告"
+          required: true
+        - label: "我已阅读并同意《问题提交指南》"
+          required: true
+---
