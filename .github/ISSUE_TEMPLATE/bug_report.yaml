@@ -37,12 +37,11 @@ body:
     validations:
       required: true
 
-  - type: checkboxes
+  - type: textarea
     id: reproduction
     attributes:
       label: "重现步骤"
-      options:
-        - label: "我已尝试重启应用"
-          required: false
-        - label: "该问题可稳定重现"
-          required: true
+      description: "请向我们提供可重现的步骤，以便更容易找到根本原因"
+      placeholder: "例如：1.helm安装 /n 2...."
+    validations:
+      required: true
