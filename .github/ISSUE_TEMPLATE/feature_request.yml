@@ -4,9 +4,8 @@ description: "提交新功能或改进建议"
 title: "[FEATURE] "
 labels: ["enhancement"]
 assignees:
-  - "product-manager"  # 默认分配给产品经理
+  - "product-manager"
 
-# --- 表单主体 ---
 body:
   # 1. 功能概述
   - type: markdown
@@ -42,7 +41,6 @@ body:
         - "P0 (核心业务关键)"
         - "P1 (提升核心体验)"
         - "P2 (锦上添花)"
-      default: "P1 (提升核心体验)"
     validations:
       required: true
 
@@ -76,42 +74,38 @@ body:
         - label: "需要设计资源"
         - label: "需要后端API修改"
 
+  # 4. 条件字段（通过 issue-form-conditions 实现）
   - type: textarea
-    id: thirdparty
+    id: thirdparty_details
     attributes:
       label: "第三方服务详情"
-      conditional: "dependencies.includes('需要第三方服务（需说明）')"
+      description: "请说明需要集成的第三方服务"
       placeholder: "例如：需要接入支付宝刷脸认证"
+    validations:
+      required: false
+    # 条件显示（需 GitHub 支持）
+    # 注意：原生的 conditional 属性已移除，改用描述提示
 
-  # 4. 可视化参考
+  # 5. 可视化参考
   - type: markdown
     attributes:
       value: "## 🎨 设计参考"
 
   - type: input
-    id: figma
+    id: design_reference
     attributes:
-      label: "Figma 链接"
+      label: "设计稿链接"
       placeholder: "https://figma.com/file/..."
 
-  - type: checkboxes
-    id: attachments
-    attributes:
-      label: "附加材料"
-      options:
-        - label: "竞品截图"
-        - label: "手绘草图"
-        - label: "用户调研数据"
-
-  # 5. 确认声明
+  # 6. 确认声明
   - type: markdown
     attributes:
       value: "## ✅ 确认清单"
 
   - type: checkboxes
-    id: checks
+    id: confirmations
     attributes:
-      label: ""
+      label: "提交前请确认"  # 必须为非空字符串
       options:
         - label: "我已搜索现有 Issue 确认无重复"
         - label: "该功能需求已获得团队初步认可"
