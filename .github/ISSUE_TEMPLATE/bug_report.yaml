@@ -1,7 +1,7 @@
 name: "🐞 Bug Report"
 description: "报告软件中的错误或异常行为"
-title: "[BUG] "
-labels: ["bug", "needs-triage"]
+title: "[BUG] 简要描述 (影响范围/模块) "
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
