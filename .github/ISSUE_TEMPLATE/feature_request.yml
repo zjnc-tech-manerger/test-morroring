@@ -1,7 +1,7 @@
 ---
 name: "✨ Feature Request"
 description: "提交新功能或改进建议"
-title: "[FEATURE] "
+title: "[FEATURE] 功能目标 + 价值说明 "
 labels: ["enhancement"]
 assignees:
   - "product-manager"
@@ -62,4 +62,4 @@ body:
     attributes:
       label: "产品设计文档链接"
       placeholder: "https://figma.com/file/..."
----
+--- 
