@@ -63,11 +63,6 @@ body:
       label: "产品设计文档链接"
       placeholder: "https://figma.com/file/..."
 
-  # 6. 确认声明
-  - type: markdown
-    attributes:
-      value: "## ✅ 确认清单"
-
   - type: checkboxes
     id: confirmations
     attributes:
