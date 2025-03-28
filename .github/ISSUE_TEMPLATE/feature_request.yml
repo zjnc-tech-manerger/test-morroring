@@ -62,12 +62,4 @@ body:
     attributes:
       label: "产品设计文档链接"
       placeholder: "https://figma.com/file/..."
-
-  - type: checkboxes
-    id: confirmations
-    attributes:
-      label: "提交前请确认"  # 必须为非空字符串
-      options:
-        - label: "我已搜索现有 Issue 确认无重复"
-        - label: "该功能需求已获得团队初步认可"
 ---
