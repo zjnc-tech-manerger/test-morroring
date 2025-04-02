@@ -1,0 +1,51 @@
+name: Docker Build and Push
+# 工作流名称：Docker镜像构建与推送
+
+on:
+  push:
+    branches: ["main"]  # Trigger branch
+    # 触发条件：当代码推送到main分支时
+    tags: ["v*"]        # Optional: also trigger when tags are pushed
+    # 可选：当推送v开头的标签时也触发（如v1.0.0）
+
+jobs:
+  build-and-push:
+    # 作业名称：构建并推送
+    runs-on: ubuntu-latest
+    # 使用最新版Ubuntu作为运行环境
+    
+    steps:
+      # 步骤开始
+      - name: Checkout code
+        # 步骤名称：检出代码
+        uses: actions/checkout@v4
+        # 使用checkout动作v4版本，将仓库代码检出到工作目录
+
+      - name: Login to Docker Hub
+        # 步骤名称：登录Docker Hub
+        uses: docker/login-action@v3
+        # 使用docker登录动作v3版本
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          # 使用GitHub Secrets中存储的Docker Hub用户名
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          # 使用GitHub Secrets中存储的Docker Hub访问令牌
+
+      - name: Build and Push
+        # 步骤名称：构建并推送
+        uses: docker/build-push-action@v5
+        # 使用docker构建推送动作v5版本
+        with:
+          context: .  # Dockerfile location
+          # 构建上下文：当前目录（Dockerfile所在位置）
+          push: true
+          # 构建后自动推送镜像
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/your-image-name:latest
+            # 镜像标签1：用户名/镜像名:latest（最新版）
+            ${{ secrets.DOCKERHUB_USERNAME }}/your-image-name:${{ github.sha }}
+            # 镜像标签2：用户名/镜像名:Git提交ID（唯一标识）
+          cache-from: type=gha  # Enable GitHub cache for faster builds
+          # 使用GitHub缓存加速构建（从缓存读取）
+          cache-to: type=gha,mode=max
+          # 将构建缓存写入GitHub缓存（最大化缓存）
