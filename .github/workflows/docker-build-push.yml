@@ -45,7 +45,3 @@ jobs:
             # 镜像标签1：用户名/镜像名:latest（最新版）
             ${{ secrets.DOCKERHUB_USERNAME }}/your-image-name:${{ github.sha }}
             # 镜像标签2：用户名/镜像名:Git提交ID（唯一标识）
-          cache-from: type=gha  # Enable GitHub cache for faster builds
-          # 使用GitHub缓存加速构建（从缓存读取）
-          cache-to: type=gha,mode=max
-          # 将构建缓存写入GitHub缓存（最大化缓存）
