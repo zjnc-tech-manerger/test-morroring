@@ -42,6 +42,4 @@ jobs:
           # 构建后自动推送镜像
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/your-image-name:latest
-            # 镜像标签1：用户名/镜像名:latest（最新版）
             ${{ secrets.DOCKERHUB_USERNAME }}/your-image-name:${{ github.sha }}
-            # 镜像标签2：用户名/镜像名:Git提交ID（唯一标识）
