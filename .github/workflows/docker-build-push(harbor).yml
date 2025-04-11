@@ -11,12 +11,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: test
+      - name: Login to Harbor
         run: |
-          echo "${{ secrets.HARBOR_TOKEN }}"
-          echo "https://${{ secrets.HARBOR_URL }}"
-          echo "${{ secrets.HARBOR_USER }}"
-
+          echo "YolZ6xBchWzpx9xrY5fjC8Dz0Tle9HmB" | docker login https://harbor.zhejianglab.com -u "robot\$nanhuinsight+harbor" --password-stdin
+        
       - name: Login to Harbor
         run: |
           echo "${{ secrets.HARBOR_TOKEN }}" | docker login https://${{ secrets.HARBOR_URL }} -u "${{ secrets.HARBOR_USER }}" --password-stdin
