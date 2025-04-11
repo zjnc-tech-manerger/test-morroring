@@ -11,6 +11,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: test
+        run: |
+          echo "${{ secrets.HARBOR_TOKEN }}"
+          echo "https://${{ secrets.HARBOR_URL }}"
+          echo "${{ secrets.HARBOR_USER }}"
+
       - name: Login to Harbor
         run: |
           echo "${{ secrets.HARBOR_TOKEN }}" | docker login https://${{ secrets.HARBOR_URL }} -u "${{ secrets.HARBOR_USER }}" --password-stdin
