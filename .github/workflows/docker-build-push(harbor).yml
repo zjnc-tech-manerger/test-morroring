@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Login to Harbor
+      - name: test
         run: |
           echo "YolZ6xBchWzpx9xrY5fjC8Dz0Tle9HmB" | docker login https://harbor.zhejianglab.com -u "robot\$nanhuinsight+harbor" --password-stdin
         
