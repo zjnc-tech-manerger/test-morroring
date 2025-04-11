@@ -18,8 +18,8 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.HARBOR_URL }}/nanhuinsight/my-app:latest .
+          docker build -t ${{ secrets.HARBOR_URL }}/nanhuinsight/your-image-name:latest .
 
       - name: Push to Harbor
         run: |
-          docker push ${{ secrets.HARBOR_URL }}/nanhuinsight/my-app:latest
+          docker push ${{ secrets.HARBOR_URL }}/nanhuinsight/your-image-name:latest
