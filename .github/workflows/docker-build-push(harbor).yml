@@ -13,8 +13,7 @@ jobs:
 
       - name: Login to Harbor
         run: |
-          echo "${{ secrets.HARBOR_TOKEN }}" | docker login https://${{ secrets.HARBOR_URL }} \
-          -u "${{ secrets.HARBOR_USER }}" --password-stdin
+          echo "${{ secrets.HARBOR_TOKEN }}" | docker login https://${{ secrets.HARBOR_URL }} -u "${{ secrets.HARBOR_USER }}" --password-stdin
             
       - name: Build Docker image
         run: |
